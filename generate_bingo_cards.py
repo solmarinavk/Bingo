@@ -132,28 +132,31 @@ def create_bingo_card(card_number, image_paths, all_images):
     actual_grid_height = cell_size * GRID_SIZE
     grid_start_x = (CARD_WIDTH - actual_grid_width) // 2
 
-    # === HEADER con título "BINGO" ===
+    # === HEADER con letras B-I-N-G-O como encabezados de columna ===
     header_y = MARGIN
+    bingo_letters = ['B', 'I', 'N', 'G', 'O']
+    letter_font = get_font(72, bold=True)
 
-    # Fondo del header con gradiente simulado (rectángulo redondeado)
-    create_rounded_rectangle(
-        draw,
-        (grid_start_x, header_y, grid_start_x + actual_grid_width, header_y + HEADER_HEIGHT),
-        radius=20,
-        fill=hex_to_rgb(COLORS['header_bg'])
-    )
+    # Dibujar cada letra sobre su columna correspondiente
+    for col, letter in enumerate(bingo_letters):
+        letter_cell_x = grid_start_x + col * cell_size
 
-    # Título BINGO con letras espaciadas
-    title_font = get_font(72, bold=True)
-    title = "B  I  N  G  O"
+        # Fondo de cada letra (rectángulo redondeado)
+        create_rounded_rectangle(
+            draw,
+            (letter_cell_x + 2, header_y, letter_cell_x + cell_size - 2, header_y + HEADER_HEIGHT),
+            radius=15,
+            fill=hex_to_rgb(COLORS['header_bg'])
+        )
 
-    # Centrar título
-    bbox = draw.textbbox((0, 0), title, font=title_font)
-    title_width = bbox[2] - bbox[0]
-    title_x = grid_start_x + (actual_grid_width - title_width) // 2
-    title_y = header_y + (HEADER_HEIGHT - (bbox[3] - bbox[1])) // 2
+        # Centrar letra en la celda del header
+        bbox = draw.textbbox((0, 0), letter, font=letter_font)
+        letter_width = bbox[2] - bbox[0]
+        letter_height = bbox[3] - bbox[1]
+        letter_x = letter_cell_x + (cell_size - letter_width) // 2
+        letter_y = header_y + (HEADER_HEIGHT - letter_height) // 2
 
-    draw.text((title_x, title_y), title, fill=hex_to_rgb(COLORS['header_text']), font=title_font)
+        draw.text((letter_x, letter_y), letter, fill=hex_to_rgb(COLORS['header_text']), font=letter_font)
 
     # === GRILLA DE IMÁGENES ===
     img_index = 0
