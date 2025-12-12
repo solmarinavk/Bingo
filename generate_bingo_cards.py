@@ -24,8 +24,8 @@ COLORS = {
     'grid_border': '#E2E8F0',      # Bordes suaves
     'cell_bg': '#FFFFFF',          # Fondo de celda
     'cell_border': '#CBD5E1',      # Borde de celda
-    'free_bg': '#FCD34D',          # Amarillo dorado para FREE
-    'free_text': '#92400E',        # Texto marrón para FREE
+    'free_bg': '#1F2937',          # Negro elegante para FREE
+    'free_text': '#FFFFFF',        # Texto blanco para FREE
     'card_number': '#64748B',      # Gris para número de cartilla
     'shadow': '#00000020',         # Sombra suave
     'accent': '#8B5CF6',           # Violeta acento
@@ -135,7 +135,9 @@ def create_bingo_card(card_number, image_paths, all_images):
     # === HEADER con letras B-I-N-G-O como encabezados de columna ===
     header_y = MARGIN
     bingo_letters = ['B', 'I', 'N', 'G', 'O']
-    letter_font = get_font(72, bold=True)
+
+    # Fuente grande para que las letras ocupen el header
+    letter_font = get_font(90, bold=True)
 
     # Dibujar cada letra sobre su columna correspondiente
     for col, letter in enumerate(bingo_letters):
@@ -149,12 +151,15 @@ def create_bingo_card(card_number, image_paths, all_images):
             fill=hex_to_rgb(COLORS['header_bg'])
         )
 
-        # Centrar letra en la celda del header
+        # Centrar letra perfectamente en la celda del header
         bbox = draw.textbbox((0, 0), letter, font=letter_font)
         letter_width = bbox[2] - bbox[0]
         letter_height = bbox[3] - bbox[1]
+
+        # Centrado horizontal
         letter_x = letter_cell_x + (cell_size - letter_width) // 2
-        letter_y = header_y + (HEADER_HEIGHT - letter_height) // 2
+        # Centrado vertical ajustado (compensar ascendentes/descendentes)
+        letter_y = header_y + (HEADER_HEIGHT - letter_height) // 2 - bbox[1]
 
         draw.text((letter_x, letter_y), letter, fill=hex_to_rgb(COLORS['header_text']), font=letter_font)
 
@@ -178,28 +183,28 @@ def create_bingo_card(card_number, image_paths, all_images):
 
             # Centro FREE
             if row == 2 and col == 2:
-                # Fondo especial para FREE
+                # Fondo negro elegante para FREE
                 create_rounded_rectangle(
                     draw,
                     (cell_x + 4, cell_y + 4, cell_x + cell_size - 4, cell_y + cell_size - 4),
-                    radius=10,
+                    radius=12,
                     fill=hex_to_rgb(COLORS['free_bg'])
                 )
 
-                # Estrella decorativa
-                star_font = get_font(48)
+                # Estrella decorativa más grande
+                star_font = get_font(56)
                 star = "★"
                 bbox = draw.textbbox((0, 0), star, font=star_font)
                 star_x = cell_x + (cell_size - (bbox[2] - bbox[0])) // 2
-                star_y = cell_y + cell_size // 2 - 50
+                star_y = cell_y + cell_size // 2 - 55
                 draw.text((star_x, star_y), star, fill=hex_to_rgb(COLORS['free_text']), font=star_font)
 
-                # Texto FREE
-                free_font = get_font(36, bold=True)
+                # Texto FREE más grande y centrado
+                free_font = get_font(42, bold=True)
                 free_text = "FREE"
                 bbox = draw.textbbox((0, 0), free_text, font=free_font)
                 free_x = cell_x + (cell_size - (bbox[2] - bbox[0])) // 2
-                free_y = cell_y + cell_size // 2 + 5
+                free_y = cell_y + cell_size // 2 + 10
                 draw.text((free_x, free_y), free_text, fill=hex_to_rgb(COLORS['free_text']), font=free_font)
             else:
                 # Colocar imagen
