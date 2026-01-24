@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz del Vino - Descubre tu vino ideal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #3b0a2a 0%, #1a0a1e 50%, #2d1b36 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #f5f0eb;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            color: #e8c4c4;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #c9a8a8;
+            font-style: italic;
+        }
+
+        .wine-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #c0392b, #e74c8c);
+            border-radius: 3px;
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+
+        .question-container {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .question-container.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .question-number {
+            font-size: 0.85rem;
+            color: #b08080;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .question-text {
+            font-size: 1.4rem;
+            color: #f0dada;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #f5f0eb;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .option-btn:hover {
+            background: rgba(192, 57, 43, 0.3);
+            border-color: rgba(192, 57, 43, 0.6);
+            transform: translateX(5px);
+        }
+
+        .option-btn:active {
+            transform: scale(0.98);
+        }
+
+        .result-container {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.6s ease;
+        }
+
+        .result-container.active {
+            display: block;
+        }
+
+        .result-wine-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .result-title {
+            font-size: 1.1rem;
+            color: #b08080;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .result-wine-name {
+            font-size: 2rem;
+            color: #e8c4c4;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .result-description {
+            font-size: 1.05rem;
+            color: #c9a8a8;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .result-details {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .result-details h3 {
+            color: #e8c4c4;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: #b08080;
+        }
+
+        .detail-value {
+            color: #f0dada;
+        }
+
+        .restart-btn {
+            background: linear-gradient(135deg, #c0392b, #8e2244);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(192, 57, 43, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 20px;
+                border-radius: 15px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .question-text {
+                font-size: 1.15rem;
+            }
+
+            .option-btn {
+                padding: 14px 16px;
+                font-size: 0.95rem;
+            }
+
+            .result-wine-name {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header" id="header">
+            <span class="wine-icon">&#127863;</span>
+            <h1>Quiz del Vino</h1>
+            <p>Responde 5 preguntas y descubre tu vino ideal</p>
+        </div>
+
+        <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Pregunta 1 -->
+        <div class="question-container active" id="q1">
+            <div class="question-number">Pregunta 1 de 5</div>
+            <div class="question-text">¿Qué tipo de comida prefieres?</div>
+            <div class="options">
+                <button class="option-btn" onclick="answer(1, 'carne_roja')">Carnes rojas y asados</button>
+                <button class="option-btn" onclick="answer(1, 'pescado')">Pescado y mariscos</button>
+                <button class="option-btn" onclick="answer(1, 'pasta')">Pastas y risottos</button>
+                <button class="option-btn" onclick="answer(1, 'queso')">Quesos y embutidos</button>
+                <button class="option-btn" onclick="answer(1, 'postre')">Postres y frutas</button>
+            </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="question-container" id="q2">
+            <div class="question-number">Pregunta 2 de 5</div>
+            <div class="question-text">¿Qué sabor te atrae más?</div>
+            <div class="options">
+                <button class="option-btn" onclick="answer(2, 'intenso')">Intenso y robusto</button>
+                <button class="option-btn" onclick="answer(2, 'suave')">Suave y sedoso</button>
+                <button class="option-btn" onclick="answer(2, 'frutal')">Frutal y fresco</button>
+                <button class="option-btn" onclick="answer(2, 'dulce')">Dulce y aromático</button>
+                <button class="option-btn" onclick="answer(2, 'seco')">Seco y mineral</button>
+            </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="question-container" id="q3">
+            <div class="question-number">Pregunta 3 de 5</div>
+            <div class="question-text">¿Para qué ocasión buscas vino?</div>
+            <div class="options">
+                <button class="option-btn" onclick="answer(3, 'romantica')">Cena romántica</button>
+                <button class="option-btn" onclick="answer(3, 'fiesta')">Fiesta con amigos</button>
+                <button class="option-btn" onclick="answer(3, 'casual')">Comida casual</button>
+                <button class="option-btn" onclick="answer(3, 'celebracion')">Celebración especial</button>
+                <button class="option-btn" onclick="answer(3, 'relax')">Momento de relax</button>
+            </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="question-container" id="q4">
+            <div class="question-number">Pregunta 4 de 5</div>
+            <div class="question-text">¿Cuánta experiencia tienes con el vino?</div>
+            <div class="options">
+                <button class="option-btn" onclick="answer(4, 'principiante')">Soy principiante</button>
+                <button class="option-btn" onclick="answer(4, 'intermedio')">Tengo algo de experiencia</button>
+                <button class="option-btn" onclick="answer(4, 'avanzado')">Soy bastante conocedor</button>
+                <button class="option-btn" onclick="answer(4, 'experto')">Me considero experto</button>
+                <button class="option-btn" onclick="answer(4, 'curioso')">Quiero explorar algo nuevo</button>
+            </div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="question-container" id="q5">
+            <div class="question-number">Pregunta 5 de 5</div>
+            <div class="question-text">¿Qué clima te representa más?</div>
+            <div class="options">
+                <button class="option-btn" onclick="answer(5, 'calido')">Cálido y soleado</button>
+                <button class="option-btn" onclick="answer(5, 'frio')">Frío y acogedor</button>
+                <button class="option-btn" onclick="answer(5, 'tropical')">Tropical y vibrante</button>
+                <button class="option-btn" onclick="answer(5, 'templado')">Templado y equilibrado</button>
+                <button class="option-btn" onclick="answer(5, 'variable')">Variable e impredecible</button>
+            </div>
+        </div>
+
+        <!-- Resultado -->
+        <div class="result-container" id="result">
+            <span class="result-wine-icon" id="resultIcon">&#127863;</span>
+            <div class="result-title">Tu vino ideal es</div>
+            <div class="result-wine-name" id="resultName"></div>
+            <div class="result-description" id="resultDesc"></div>
+            <div class="result-details">
+                <h3>Detalles</h3>
+                <div class="detail-item">
+                    <span class="detail-label">Tipo</span>
+                    <span class="detail-value" id="detailType"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Temperatura de servicio</span>
+                    <span class="detail-value" id="detailTemp"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Maridaje ideal</span>
+                    <span class="detail-value" id="detailFood"></span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Intensidad</span>
+                    <span class="detail-value" id="detailIntensity"></span>
+                </div>
+            </div>
+            <button class="restart-btn" onclick="restart()">Volver a empezar</button>
+        </div>
+    </div>
+
+    <script>
+        const answers = {};
+
+        const wines = {
+            cabernet_sauvignon: {
+                name: "Cabernet Sauvignon",
+                icon: "&#127863;",
+                description: "Un vino tinto con cuerpo, perfecto para quienes disfrutan de sabores intensos y profundos. Con notas de cassis, cedro y un toque de vainilla, es el rey de los tintos.",
+                type: "Tinto con cuerpo",
+                temp: "16-18°C",
+                food: "Carnes rojas, cordero",
+                intensity: "Alta"
+            },
+            merlot: {
+                name: "Merlot",
+                icon: "&#127863;",
+                description: "Un tinto elegante y aterciopelado, con sabores suaves de ciruela, cereza y chocolate. Ideal para quienes buscan un vino accesible pero sofisticado.",
+                type: "Tinto medio",
+                temp: "15-17°C",
+                food: "Pastas, aves asadas",
+                intensity: "Media"
+            },
+            pinot_noir: {
+                name: "Pinot Noir",
+                icon: "&#127863;",
+                description: "Un tinto ligero y delicado con aromas de fresa, frambuesa y notas terrosas. Perfecto para los paladares refinados que buscan complejidad sin peso.",
+                type: "Tinto ligero",
+                temp: "14-16°C",
+                food: "Salmón, pato, hongos",
+                intensity: "Ligera a media"
+            },
+            chardonnay: {
+                name: "Chardonnay",
+                icon: "&#129347;",
+                description: "Un blanco versátil y cremoso con notas de manzana, mantequilla y un toque de roble. Elegante y complejo, es el blanco más popular del mundo.",
+                type: "Blanco con cuerpo",
+                temp: "10-12°C",
+                food: "Pescados, pollo cremoso",
+                intensity: "Media a alta"
+            },
+            sauvignon_blanc: {
+                name: "Sauvignon Blanc",
+                icon: "&#129347;",
+                description: "Un blanco vibrante y refrescante con notas cítricas, hierbas frescas y un final mineral. Perfecto para días cálidos y comidas ligeras.",
+                type: "Blanco fresco",
+                temp: "8-10°C",
+                food: "Mariscos, ensaladas",
+                intensity: "Ligera a media"
+            },
+            rose: {
+                name: "Rosé",
+                icon: "&#127864;",
+                description: "Un vino versátil y encantador con sabores de fresa, sandía y flores. Fresco y fácil de beber, es perfecto para socializar y disfrutar sin complicaciones.",
+                type: "Rosado",
+                temp: "8-10°C",
+                food: "Tapas, pizza, quesos suaves",
+                intensity: "Ligera"
+            },
+            moscato: {
+                name: "Moscato",
+                icon: "&#127815;",
+                description: "Un vino dulce y aromático con burbujas suaves y sabores de durazno, lichi y flores blancas. Ideal para quienes prefieren vinos dulces y festivos.",
+                type: "Blanco dulce espumoso",
+                temp: "6-8°C",
+                food: "Postres, frutas, brunch",
+                intensity: "Ligera"
+            },
+            champagne: {
+                name: "Champagne / Espumante",
+                icon: "&#127870;",
+                description: "Elegante y festivo, con burbujas finas y sabores de tostada, manzana verde y cítricos. El compañero perfecto para celebrar cualquier momento especial.",
+                type: "Espumoso",
+                temp: "6-8°C",
+                food: "Aperitivos, ostras, caviar",
+                intensity: "Media"
+            }
+        };
+
+        function answer(questionNum, value) {
+            answers[questionNum] = value;
+
+            const currentQ = document.getElementById('q' + questionNum);
+            currentQ.classList.remove('active');
+
+            if (questionNum < 5) {
+                const nextQ = document.getElementById('q' + (questionNum + 1));
+                nextQ.classList.add('active');
+                document.getElementById('progressFill').style.width = (questionNum * 20) + '%';
+            } else {
+                document.getElementById('progressFill').style.width = '100%';
+                document.getElementById('progressBar').style.display = 'none';
+                document.getElementById('header').style.display = 'none';
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const wine = calculateWine();
+            const data = wines[wine];
+
+            document.getElementById('resultIcon').innerHTML = data.icon;
+            document.getElementById('resultName').textContent = data.name;
+            document.getElementById('resultDesc').textContent = data.description;
+            document.getElementById('detailType').textContent = data.type;
+            document.getElementById('detailTemp').textContent = data.temp;
+            document.getElementById('detailFood').textContent = data.food;
+            document.getElementById('detailIntensity').textContent = data.intensity;
+
+            document.getElementById('result').classList.add('active');
+        }
+
+        function calculateWine() {
+            const scores = {
+                cabernet_sauvignon: 0,
+                merlot: 0,
+                pinot_noir: 0,
+                chardonnay: 0,
+                sauvignon_blanc: 0,
+                rose: 0,
+                moscato: 0,
+                champagne: 0
+            };
+
+            // Pregunta 1: Comida
+            switch (answers[1]) {
+                case 'carne_roja':
+                    scores.cabernet_sauvignon += 3;
+                    scores.merlot += 2;
+                    break;
+                case 'pescado':
+                    scores.sauvignon_blanc += 3;
+                    scores.chardonnay += 2;
+                    scores.pinot_noir += 1;
+                    break;
+                case 'pasta':
+                    scores.merlot += 3;
+                    scores.pinot_noir += 2;
+                    scores.chardonnay += 1;
+                    break;
+                case 'queso':
+                    scores.cabernet_sauvignon += 2;
+                    scores.rose += 2;
+                    scores.champagne += 2;
+                    break;
+                case 'postre':
+                    scores.moscato += 3;
+                    scores.champagne += 2;
+                    scores.rose += 1;
+                    break;
+            }
+
+            // Pregunta 2: Sabor
+            switch (answers[2]) {
+                case 'intenso':
+                    scores.cabernet_sauvignon += 3;
+                    scores.merlot += 1;
+                    break;
+                case 'suave':
+                    scores.merlot += 3;
+                    scores.pinot_noir += 2;
+                    scores.rose += 1;
+                    break;
+                case 'frutal':
+                    scores.rose += 3;
+                    scores.pinot_noir += 2;
+                    scores.moscato += 2;
+                    break;
+                case 'dulce':
+                    scores.moscato += 3;
+                    scores.rose += 1;
+                    scores.champagne += 1;
+                    break;
+                case 'seco':
+                    scores.sauvignon_blanc += 3;
+                    scores.chardonnay += 2;
+                    scores.champagne += 1;
+                    break;
+            }
+
+            // Pregunta 3: Ocasion
+            switch (answers[3]) {
+                case 'romantica':
+                    scores.pinot_noir += 3;
+                    scores.champagne += 2;
+                    scores.merlot += 1;
+                    break;
+                case 'fiesta':
+                    scores.rose += 3;
+                    scores.champagne += 2;
+                    scores.moscato += 2;
+                    break;
+                case 'casual':
+                    scores.merlot += 2;
+                    scores.rose += 2;
+                    scores.sauvignon_blanc += 2;
+                    break;
+                case 'celebracion':
+                    scores.champagne += 3;
+                    scores.moscato += 1;
+                    scores.cabernet_sauvignon += 1;
+                    break;
+                case 'relax':
+                    scores.chardonnay += 3;
+                    scores.pinot_noir += 2;
+                    scores.sauvignon_blanc += 1;
+                    break;
+            }
+
+            // Pregunta 4: Experiencia
+            switch (answers[4]) {
+                case 'principiante':
+                    scores.moscato += 3;
+                    scores.rose += 2;
+                    break;
+                case 'intermedio':
+                    scores.merlot += 2;
+                    scores.chardonnay += 2;
+                    scores.rose += 1;
+                    break;
+                case 'avanzado':
+                    scores.cabernet_sauvignon += 2;
+                    scores.pinot_noir += 2;
+                    scores.champagne += 1;
+                    break;
+                case 'experto':
+                    scores.cabernet_sauvignon += 2;
+                    scores.pinot_noir += 3;
+                    scores.champagne += 1;
+                    break;
+                case 'curioso':
+                    scores.sauvignon_blanc += 2;
+                    scores.pinot_noir += 2;
+                    scores.champagne += 2;
+                    break;
+            }
+
+            // Pregunta 5: Clima
+            switch (answers[5]) {
+                case 'calido':
+                    scores.sauvignon_blanc += 3;
+                    scores.rose += 2;
+                    break;
+                case 'frio':
+                    scores.cabernet_sauvignon += 2;
+                    scores.merlot += 2;
+                    scores.chardonnay += 2;
+                    break;
+                case 'tropical':
+                    scores.moscato += 3;
+                    scores.rose += 2;
+                    scores.sauvignon_blanc += 1;
+                    break;
+                case 'templado':
+                    scores.pinot_noir += 2;
+                    scores.merlot += 2;
+                    scores.chardonnay += 2;
+                    break;
+                case 'variable':
+                    scores.champagne += 3;
+                    scores.pinot_noir += 1;
+                    scores.rose += 1;
+                    break;
+            }
+
+            // Encontrar el vino con mayor puntaje
+            let maxScore = 0;
+            let bestWine = 'merlot';
+            for (const [wine, score] of Object.entries(scores)) {
+                if (score > maxScore) {
+                    maxScore = score;
+                    bestWine = wine;
+                }
+            }
+
+            return bestWine;
+        }
+
+        function restart() {
+            for (const key in answers) {
+                delete answers[key];
+            }
+
+            document.getElementById('result').classList.remove('active');
+            document.getElementById('header').style.display = 'block';
+            document.getElementById('progressBar').style.display = 'block';
+            document.getElementById('progressFill').style.width = '0%';
+
+            document.querySelectorAll('.question-container').forEach(q => q.classList.remove('active'));
+            document.getElementById('q1').classList.add('active');
+        }
+    </script>
+</body>
+</html>
