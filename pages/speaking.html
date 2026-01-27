@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking - TOEFL Master</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">T</span>
+                <span>TOEFL Master</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="reading.html">Reading</a></li>
+                <li><a href="listening.html">Listening</a></li>
+                <li><a href="speaking.html" class="active">Speaking</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="vocabulary.html">Vocabulario</a></li>
+                <li><a href="practice-test.html" class="btn-nav">Test Completo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header" style="border-bottom: 4px solid var(--speaking-color);">
+        <span class="badge">Secci\u00f3n 3 de 4</span>
+        <h1>Speaking Section</h1>
+        <p>Desarrolla fluidez y estructura en tus respuestas orales con plantillas efectivas</p>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-box">
+                    <h3>Sobre la Secci\u00f3n de Speaking</h3>
+                    <ul>
+                        <li>4 tareas en total</li>
+                        <li>1 tarea independiente (opini\u00f3n personal)</li>
+                        <li>3 tareas integradas (lectura + audio + respuesta)</li>
+                        <li>15-30 segundos de preparaci\u00f3n</li>
+                        <li>45-60 segundos para responder</li>
+                        <li>Se eval\u00faa: delivery, language use, topic development</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Las 4 Tareas</h3>
+                    <ul>
+                        <li><strong>Task 1:</strong> Opini\u00f3n personal sobre un tema familiar</li>
+                        <li><strong>Task 2:</strong> Lectura + conversaci\u00f3n sobre pol\u00edticas universitarias</li>
+                        <li><strong>Task 3:</strong> Lectura + conferencia sobre concepto acad\u00e9mico</li>
+                        <li><strong>Task 4:</strong> Conferencia acad\u00e9mica (resumen)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Estrategias de Speaking</h2>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-number">01</div>
+                    <h4>Usa Plantillas</h4>
+                    <p>Memoriza estructuras que puedas adaptar a cualquier pregunta. Esto te ahorra tiempo de planificaci\u00f3n y asegura organizaci\u00f3n.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">02</div>
+                    <h4>No Memorices Respuestas</h4>
+                    <p>Los evaluadores detectan respuestas memorizadas. Usa plantillas flexibles pero adapta el contenido a cada pregunta espec\u00edfica.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">03</div>
+                    <h4>Habla Claramente</h4>
+                    <p>La pronunciaci\u00f3n clara es m\u00e1s importante que un acento perfecto. Mant\u00e9n un ritmo constante y haz pausas naturales.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">04</div>
+                    <h4>Usa Conectores</h4>
+                    <p>Palabras como "firstly", "in addition", "however", "for example" muestran organizaci\u00f3n y dan fluidez a tu respuesta.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">05</div>
+                    <h4>Da Ejemplos Espec\u00edficos</h4>
+                    <p>No hables en abstracto. Usa ejemplos concretos y personales para apoyar tus puntos. Esto hace tu respuesta m\u00e1s convincente.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">06</div>
+                    <h4>Practica con Timer</h4>
+                    <p>Desarrolla sentido del tiempo. Saber cu\u00e1nto dura 45 o 60 segundos te ayuda a estructurar tu respuesta sin apresurarte o quedarte corto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Plantillas para Cada Tarea</h2>
+
+            <div class="tabs">
+                <button class="tab active" data-tab="task1">Task 1: Independiente</button>
+                <button class="tab" data-tab="task2">Task 2: Campus</button>
+                <button class="tab" data-tab="task3">Task 3: Acad\u00e9mica</button>
+                <button class="tab" data-tab="task4">Task 4: Conferencia</button>
+            </div>
+
+            <div id="task1" class="tab-content active">
+                <div class="content-box">
+                    <h3>Task 1: Independent Speaking (45 segundos)</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Te dan una pregunta de opini\u00f3n. Tienes 15 segundos para preparar y 45 segundos para responder.
+                    </p>
+
+                    <div class="template-box">
+                        <h4>Plantilla B\u00e1sica</h4>
+                        <p>
+                            <strong>Introducci\u00f3n (5-10 seg):</strong><br>
+                            "In my opinion, I believe that <span class="placeholder">[tu posici\u00f3n]</span>. I feel this way for two main reasons."<br><br>
+
+                            <strong>Raz\u00f3n 1 (15-18 seg):</strong><br>
+                            "First of all, <span class="placeholder">[raz\u00f3n 1]</span>. For example, <span class="placeholder">[ejemplo espec\u00edfico]</span>."<br><br>
+
+                            <strong>Raz\u00f3n 2 (15-18 seg):</strong><br>
+                            "Secondly, <span class="placeholder">[raz\u00f3n 2]</span>. For instance, <span class="placeholder">[ejemplo espec\u00edfico]</span>."<br><br>
+
+                            <strong>Conclusi\u00f3n (5 seg):</strong><br>
+                            "For these reasons, I strongly believe that <span class="placeholder">[reafirmar posici\u00f3n]</span>."
+                        </p>
+                    </div>
+
+                    <h4 class="mt-4">Ejemplo de Pregunta:</h4>
+                    <div class="question-block">
+                        <div class="question-text">"Do you agree or disagree with the following statement? It is better to study alone than in a group."</div>
+                    </div>
+
+                    <div class="template-box">
+                        <h4>Ejemplo de Respuesta</h4>
+                        <p>
+                            "In my opinion, I believe that studying in a group is more beneficial than studying alone. I feel this way for two main reasons.<br><br>
+
+                            First of all, when you study with others, you can learn from different perspectives. For example, last semester I joined a study group for my chemistry class, and my classmates explained concepts in ways that made more sense to me than the textbook.<br><br>
+
+                            Secondly, group study keeps you motivated and accountable. For instance, knowing that my study partners were counting on me made me less likely to procrastinate or skip sessions.<br><br>
+
+                            For these reasons, I strongly believe that group study is the better approach."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exercise-container mt-4">
+                    <h3>Practica Task 1</h3>
+                    <div class="question-block">
+                        <div class="question-text">"Some people prefer to live in a big city, while others prefer to live in a small town. Which do you prefer and why?"</div>
+                    </div>
+
+                    <div class="recording-area">
+                        <button class="record-btn" id="recordBtn1" onclick="toggleRecording(this)"></button>
+                        <div class="recording-status">Haz clic para comenzar a grabar</div>
+                        <div class="recording-time" id="recordTime1">0:00 / 0:45</div>
+                    </div>
+
+                    <div class="template-box">
+                        <h4>Notas de preparaci\u00f3n (15 segundos)</h4>
+                        <p>
+                            Posici\u00f3n: _______________<br>
+                            Raz\u00f3n 1: _______________<br>
+                            Ejemplo 1: _______________<br>
+                            Raz\u00f3n 2: _______________<br>
+                            Ejemplo 2: _______________
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="task2" class="tab-content">
+                <div class="content-box">
+                    <h3>Task 2: Integrated - Campus Situation (60 segundos)</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Lees un anuncio/carta sobre una pol\u00edtica universitaria (45-50 seg). Luego escuchas una conversaci\u00f3n donde un estudiante da su opini\u00f3n. Debes resumir ambos.
+                    </p>
+
+                    <div class="template-box">
+                        <h4>Plantilla para Task 2</h4>
+                        <p>
+                            <strong>Introducci\u00f3n (10 seg):</strong><br>
+                            "The university has announced <span class="placeholder">[cambio/pol\u00edtica]</span>. The <span class="placeholder">[man/woman]</span> in the conversation <span class="placeholder">[agrees/disagrees]</span> with this change."<br><br>
+
+                            <strong>Raz\u00f3n 1 del hablante (20-25 seg):</strong><br>
+                            "First, <span class="placeholder">[he/she]</span> argues that <span class="placeholder">[raz\u00f3n 1]</span>. <span class="placeholder">[He/She]</span> explains that <span class="placeholder">[detalle/ejemplo]</span>."<br><br>
+
+                            <strong>Raz\u00f3n 2 del hablante (20-25 seg):</strong><br>
+                            "Second, <span class="placeholder">[he/she]</span> points out that <span class="placeholder">[raz\u00f3n 2]</span>. <span class="placeholder">[He/She]</span> mentions that <span class="placeholder">[detalle/ejemplo]</span>."
+                        </p>
+                    </div>
+
+                    <h4 class="mt-4">Ejemplo de Escenario:</h4>
+
+                    <div class="content-box mb-3">
+                        <h4>Reading Passage (45 segundos para leer)</h4>
+                        <div class="passage-text" style="max-height: 200px;">
+                            <p><strong>University to Eliminate Printed Course Catalogs</strong></p>
+                            <p>Beginning next semester, the university will no longer print physical course catalogs. Instead, all course information will be available exclusively on the university's website. This change is being made for two reasons. First, it will save the university approximately $50,000 per year in printing costs. Second, the online catalog can be updated in real-time when courses are added, removed, or when schedules change, ensuring students always have access to the most current information.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-box mb-3">
+                        <h4>Listening (Transcripci\u00f3n para pr\u00e1ctica)</h4>
+                        <div class="passage-text" style="max-height: 250px;">
+                            <p><strong>Woman:</strong> Did you see the announcement about the course catalogs?</p>
+                            <p><strong>Man:</strong> Yeah, and honestly, I think it's a terrible idea.</p>
+                            <p><strong>Woman:</strong> Really? Why?</p>
+                            <p><strong>Man:</strong> Well, first of all, not everyone has easy access to computers. I mean, the library computers are always full during registration, and some students, like my roommate, don't have laptops. Having a physical catalog meant you could plan your schedule anywhere.</p>
+                            <p><strong>Woman:</strong> I guess that's true...</p>
+                            <p><strong>Man:</strong> And another thing - they say updates will be real-time, but the website crashes every single registration day. Last semester I couldn't access it for three hours! At least with a printed catalog, you had something reliable to work with, even if a few details changed.</p>
+                        </div>
+                    </div>
+
+                    <div class="template-box">
+                        <h4>Ejemplo de Respuesta</h4>
+                        <p>
+                            "The university has announced that it will stop printing physical course catalogs and move everything online. The man in the conversation disagrees with this change for two reasons.<br><br>
+
+                            First, he argues that not all students have easy access to computers. He explains that library computers are always crowded during registration, and some students, like his roommate, don't own laptops. With a physical catalog, students could plan their schedules anywhere without needing technology.<br><br>
+
+                            Second, he points out that the university website is unreliable. He mentions that the website crashes on registration day - last semester it was down for three hours. So even though the online catalog can be updated in real-time, students might not be able to access it when they need it most."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="task3" class="tab-content">
+                <div class="content-box">
+                    <h3>Task 3: Integrated - Academic Topic (60 segundos)</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Lees un pasaje sobre un concepto acad\u00e9mico. Luego escuchas una conferencia con ejemplos. Debes explicar el concepto usando los ejemplos.
+                    </p>
+
+                    <div class="template-box">
+                        <h4>Plantilla para Task 3</h4>
+                        <p>
+                            <strong>Introducci\u00f3n (10 seg):</strong><br>
+                            "The reading passage introduces the concept of <span class="placeholder">[concepto]</span>, which is <span class="placeholder">[definici\u00f3n breve]</span>. The professor illustrates this with <span class="placeholder">[one example/two examples]</span>."<br><br>
+
+                            <strong>Ejemplo 1 (20-25 seg):</strong><br>
+                            "First, the professor describes <span class="placeholder">[ejemplo 1]</span>. <span class="placeholder">[He/She]</span> explains that <span class="placeholder">[detalles]</span>. This demonstrates <span class="placeholder">[c\u00f3mo se relaciona con el concepto]</span>."<br><br>
+
+                            <strong>Ejemplo 2 (si hay - 20-25 seg):</strong><br>
+                            "Second, the professor discusses <span class="placeholder">[ejemplo 2]</span>. <span class="placeholder">[Detalles]</span>. This shows how <span class="placeholder">[conexi\u00f3n con el concepto]</span>."
+                        </p>
+                    </div>
+
+                    <h4 class="mt-4">Ejemplo de Escenario:</h4>
+
+                    <div class="content-box mb-3">
+                        <h4>Reading Passage: Social Facilitation</h4>
+                        <div class="passage-text" style="max-height: 180px;">
+                            <p><strong>Social Facilitation</strong></p>
+                            <p>Social facilitation refers to the tendency for people to perform differently when they are in the presence of others compared to when they are alone. Research has shown that being observed or working alongside others can improve performance on simple or well-practiced tasks. However, for complex or unfamiliar tasks, the presence of others can actually decrease performance. This phenomenon occurs because the presence of others increases physiological arousal, which can either help or hinder performance depending on the nature of the task.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-box mb-3">
+                        <h4>Lecture (Transcripci\u00f3n)</h4>
+                        <div class="passage-text" style="max-height: 250px;">
+                            <p><strong>Professor:</strong> So let me give you a couple of examples of social facilitation in action.</p>
+                            <p>I remember when I was learning to play piano as a kid. After months of practice, I could play a simple song perfectly at home. But when my parents invited guests over and asked me to play for them, I played even better than usual - faster, with more confidence. The simple task I had mastered became easier with an audience.</p>
+                            <p>But here's the flip side. In college, I was taking an advanced mathematics course, and we had problem-solving sessions where we worked at the board in front of the class. These were complex problems I was still learning. And you know what? I made so many more mistakes at the board than I did working alone in my room. The pressure of being watched made me second-guess myself and forget steps I knew.</p>
+                        </div>
+                    </div>
+
+                    <div class="template-box">
+                        <h4>Ejemplo de Respuesta</h4>
+                        <p>
+                            "The reading passage introduces the concept of social facilitation, which refers to how the presence of others affects our performance. The professor illustrates this with two personal examples.<br><br>
+
+                            First, the professor describes learning piano as a child. After practicing for months, she could play a simple song perfectly at home. When guests came over, she actually played even better - faster and with more confidence. This demonstrates how an audience can improve performance on simple, well-practiced tasks.<br><br>
+
+                            Second, the professor discusses her experience in college math class. When solving complex problems at the board in front of classmates, she made many more mistakes than when working alone. She would second-guess herself and forget steps. This shows how the presence of others can decrease performance on difficult, unfamiliar tasks."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="task4" class="tab-content">
+                <div class="content-box">
+                    <h3>Task 4: Integrated - Academic Lecture (60 segundos)</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Escuchas una conferencia acad\u00e9mica completa (sin lectura previa). Debes resumir los puntos principales y ejemplos.
+                    </p>
+
+                    <div class="template-box">
+                        <h4>Plantilla para Task 4</h4>
+                        <p>
+                            <strong>Introducci\u00f3n (8-10 seg):</strong><br>
+                            "The professor discusses <span class="placeholder">[tema principal]</span>. <span class="placeholder">[He/She]</span> explains <span class="placeholder">[n\u00famero]</span> <span class="placeholder">[ways/types/reasons/examples]</span>."<br><br>
+
+                            <strong>Punto/Ejemplo 1 (20-25 seg):</strong><br>
+                            "First, <span class="placeholder">[he/she]</span> talks about <span class="placeholder">[punto 1]</span>. <span class="placeholder">[He/She]</span> explains that <span class="placeholder">[detalles y ejemplos]</span>."<br><br>
+
+                            <strong>Punto/Ejemplo 2 (20-25 seg):</strong><br>
+                            "Second, <span class="placeholder">[he/she]</span> describes <span class="placeholder">[punto 2]</span>. For example, <span class="placeholder">[detalles]</span>."<br><br>
+
+                            <strong>(Opcional) Conclusi\u00f3n (5 seg):</strong><br>
+                            "These examples show how <span class="placeholder">[conexi\u00f3n con tema principal]</span>."
+                        </p>
+                    </div>
+
+                    <h4 class="mt-4">Ejemplo de Conferencia:</h4>
+
+                    <div class="content-box mb-3">
+                        <h4>Lecture: Animal Defense Mechanisms</h4>
+                        <div class="passage-text" style="max-height: 300px;">
+                            <p><strong>Professor:</strong> Today I want to talk about some fascinating ways that animals protect themselves from predators. I'll focus on two interesting strategies: mimicry and camouflage.</p>
+
+                            <p>First, let's look at mimicry. This is when an animal evolves to look like something else - often something dangerous or unpleasant. Take the viceroy butterfly. The viceroy has evolved to look almost identical to the monarch butterfly. Now, monarchs taste terrible to birds because of the toxins they absorb from milkweed plants. Birds learn to avoid monarchs, and because viceroys look so similar, birds avoid them too - even though viceroys are perfectly edible. The viceroy benefits from the monarch's bad reputation without having to produce any toxins itself.</p>
+
+                            <p>Now, camouflage works differently. Instead of looking like something else, camouflaged animals blend into their environment so predators can't see them. The leaf-tailed gecko is a perfect example. This lizard from Madagascar has a body shaped like a dead leaf, complete with what looks like veins and even spots that mimic decay. When it presses against a tree trunk, it becomes virtually invisible. Predators looking for a lizard-shaped meal simply don't register it as prey.</p>
+                        </div>
+                    </div>
+
+                    <div class="template-box">
+                        <h4>Ejemplo de Respuesta</h4>
+                        <p>
+                            "The professor discusses how animals protect themselves from predators. She explains two main defense strategies: mimicry and camouflage.<br><br>
+
+                            First, she talks about mimicry, where an animal evolves to look like something dangerous. She uses the viceroy butterfly as an example. The viceroy looks almost identical to the monarch butterfly, which tastes bad to birds because of toxins from milkweed. Since birds avoid monarchs, they also avoid viceroys, even though viceroys are actually edible. The viceroy benefits without producing any toxins itself.<br><br>
+
+                            Second, she describes camouflage, where animals blend into their environment. She gives the example of the leaf-tailed gecko from Madagascar. This lizard's body is shaped like a dead leaf with veins and decay spots. When it presses against a tree, it becomes invisible to predators looking for a lizard-shaped meal."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Frases \u00datiles para Speaking</h2>
+
+            <div class="content-grid">
+                <div class="content-box">
+                    <h3>Para Dar Opiniones</h3>
+                    <ul style="list-style: none;">
+                        <li>"In my opinion..."</li>
+                        <li>"I strongly believe that..."</li>
+                        <li>"From my perspective..."</li>
+                        <li>"I would argue that..."</li>
+                        <li>"Personally, I think..."</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Para Conectar Ideas</h3>
+                    <ul style="list-style: none;">
+                        <li>"First of all... Secondly..."</li>
+                        <li>"In addition to that..."</li>
+                        <li>"Furthermore..."</li>
+                        <li>"Another reason is..."</li>
+                        <li>"What's more..."</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Para Dar Ejemplos</h3>
+                    <ul style="list-style: none;">
+                        <li>"For example..."</li>
+                        <li>"For instance..."</li>
+                        <li>"To illustrate this..."</li>
+                        <li>"A good example of this is..."</li>
+                        <li>"Let me give you an example..."</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>Para Resumir</h3>
+                    <ul style="list-style: none;">
+                        <li>"The reading explains that..."</li>
+                        <li>"According to the professor..."</li>
+                        <li>"The speaker argues that..."</li>
+                        <li>"This demonstrates that..."</li>
+                        <li>"For these reasons..."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">T</span>
+                    <span>TOEFL Master</span>
+                </div>
+                <p>Plataforma gratuita de preparaci\u00f3n para el TOEFL iBT</p>
+            </div>
+            <div class="footer-bottom">
+                <p>\u00a9 2024 TOEFL Master. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

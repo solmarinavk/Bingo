@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulario - TOEFL Master</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">T</span>
+                <span>TOEFL Master</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="reading.html">Reading</a></li>
+                <li><a href="listening.html">Listening</a></li>
+                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="vocabulary.html" class="active">Vocabulario</a></li>
+                <li><a href="practice-test.html" class="btn-nav">Test Completo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <span class="badge">500+ Palabras Esenciales</span>
+        <h1>Vocabulario Acad\u00e9mico</h1>
+        <p>Domina las palabras m\u00e1s frecuentes en textos acad\u00e9micos para mejorar tu puntaje</p>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Flashcards de Vocabulario</h2>
+            <p class="section-subtitle">Haz clic en la tarjeta para ver la definici\u00f3n</p>
+
+            <div class="tabs" style="justify-content: center;">
+                <button class="tab active" data-tab="category-academic">Acad\u00e9mico General</button>
+                <button class="tab" data-tab="category-science">Ciencias</button>
+                <button class="tab" data-tab="category-social">Ciencias Sociales</button>
+                <button class="tab" data-tab="category-transitions">Transiciones</button>
+            </div>
+
+            <div id="category-academic" class="tab-content active">
+                <div class="progress-container mb-4">
+                    <div class="progress-label">
+                        <span>Progreso</span>
+                        <span id="progress-academic">1 / 20</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill-academic" style="width: 5%"></div>
+                    </div>
+                </div>
+
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard-academic" onclick="flipCard('academic')">
+                        <div class="flashcard-face flashcard-front">
+                            <div class="flashcard-word" id="word-academic">analyze</div>
+                            <div class="flashcard-hint">(verb)</div>
+                        </div>
+                        <div class="flashcard-face flashcard-back">
+                            <div class="flashcard-definition" id="def-academic">
+                                To examine something in detail in order to understand it better or discover more about it.
+                                <br><br>
+                                <em>"Scientists analyze data to find patterns."</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard-controls">
+                        <button class="flashcard-btn dont-know" onclick="markWord('academic', false)">No lo s\u00e9</button>
+                        <button class="flashcard-btn next" onclick="nextWord('academic')">Siguiente</button>
+                        <button class="flashcard-btn know" onclick="markWord('academic', true)">Lo s\u00e9</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="category-science" class="tab-content">
+                <div class="progress-container mb-4">
+                    <div class="progress-label">
+                        <span>Progreso</span>
+                        <span id="progress-science">1 / 20</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill-science" style="width: 5%"></div>
+                    </div>
+                </div>
+
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard-science" onclick="flipCard('science')">
+                        <div class="flashcard-face flashcard-front">
+                            <div class="flashcard-word" id="word-science">hypothesis</div>
+                            <div class="flashcard-hint">(noun)</div>
+                        </div>
+                        <div class="flashcard-face flashcard-back">
+                            <div class="flashcard-definition" id="def-science">
+                                A proposed explanation for a phenomenon, made as a starting point for further investigation.
+                                <br><br>
+                                <em>"The researcher tested her hypothesis through experiments."</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard-controls">
+                        <button class="flashcard-btn dont-know" onclick="markWord('science', false)">No lo s\u00e9</button>
+                        <button class="flashcard-btn next" onclick="nextWord('science')">Siguiente</button>
+                        <button class="flashcard-btn know" onclick="markWord('science', true)">Lo s\u00e9</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="category-social" class="tab-content">
+                <div class="progress-container mb-4">
+                    <div class="progress-label">
+                        <span>Progreso</span>
+                        <span id="progress-social">1 / 20</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill-social" style="width: 5%"></div>
+                    </div>
+                </div>
+
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard-social" onclick="flipCard('social')">
+                        <div class="flashcard-face flashcard-front">
+                            <div class="flashcard-word" id="word-social">demographic</div>
+                            <div class="flashcard-hint">(adjective/noun)</div>
+                        </div>
+                        <div class="flashcard-face flashcard-back">
+                            <div class="flashcard-definition" id="def-social">
+                                Relating to the structure of populations; statistical data about a population's characteristics.
+                                <br><br>
+                                <em>"Demographic changes are affecting the economy."</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard-controls">
+                        <button class="flashcard-btn dont-know" onclick="markWord('social', false)">No lo s\u00e9</button>
+                        <button class="flashcard-btn next" onclick="nextWord('social')">Siguiente</button>
+                        <button class="flashcard-btn know" onclick="markWord('social', true)">Lo s\u00e9</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="category-transitions" class="tab-content">
+                <div class="progress-container mb-4">
+                    <div class="progress-label">
+                        <span>Progreso</span>
+                        <span id="progress-transitions">1 / 20</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill-transitions" style="width: 5%"></div>
+                    </div>
+                </div>
+
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard-transitions" onclick="flipCard('transitions')">
+                        <div class="flashcard-face flashcard-front">
+                            <div class="flashcard-word" id="word-transitions">consequently</div>
+                            <div class="flashcard-hint">(adverb)</div>
+                        </div>
+                        <div class="flashcard-face flashcard-back">
+                            <div class="flashcard-definition" id="def-transitions">
+                                As a result; therefore. Used to show cause and effect relationships.
+                                <br><br>
+                                <em>"The budget was cut; consequently, several programs were eliminated."</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard-controls">
+                        <button class="flashcard-btn dont-know" onclick="markWord('transitions', false)">No lo s\u00e9</button>
+                        <button class="flashcard-btn next" onclick="nextWord('transitions')">Siguiente</button>
+                        <button class="flashcard-btn know" onclick="markWord('transitions', true)">Lo s\u00e9</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Listas de Vocabulario</h2>
+
+            <div class="tabs" style="justify-content: center;">
+                <button class="tab active" data-tab="list-essential">Esenciales (AWL)</button>
+                <button class="tab" data-tab="list-connectors">Conectores</button>
+                <button class="tab" data-tab="list-academic">Verbos Acad\u00e9micos</button>
+            </div>
+
+            <div id="list-essential" class="tab-content active">
+                <div class="content-box">
+                    <h3>Academic Word List - Palabras Esenciales</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Estas son las palabras m\u00e1s frecuentes en textos acad\u00e9micos en ingl\u00e9s.
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: var(--primary-light); margin-bottom: 1rem;">A - C</h4>
+                            <ul style="color: var(--text-secondary); line-height: 2;">
+                                <li><strong>analyze</strong> - analizar</li>
+                                <li><strong>approach</strong> - enfoque, acercarse</li>
+                                <li><strong>assess</strong> - evaluar</li>
+                                <li><strong>assume</strong> - asumir, suponer</li>
+                                <li><strong>authority</strong> - autoridad</li>
+                                <li><strong>available</strong> - disponible</li>
+                                <li><strong>benefit</strong> - beneficio</li>
+                                <li><strong>concept</strong> - concepto</li>
+                                <li><strong>consist</strong> - consistir</li>
+                                <li><strong>constitute</strong> - constituir</li>
+                                <li><strong>context</strong> - contexto</li>
+                                <li><strong>contract</strong> - contrato</li>
+                                <li><strong>create</strong> - crear</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-light); margin-bottom: 1rem;">D - F</h4>
+                            <ul style="color: var(--text-secondary); line-height: 2;">
+                                <li><strong>data</strong> - datos</li>
+                                <li><strong>define</strong> - definir</li>
+                                <li><strong>derive</strong> - derivar</li>
+                                <li><strong>distribute</strong> - distribuir</li>
+                                <li><strong>economic</strong> - econ\u00f3mico</li>
+                                <li><strong>environment</strong> - ambiente</li>
+                                <li><strong>establish</strong> - establecer</li>
+                                <li><strong>estimate</strong> - estimar</li>
+                                <li><strong>evident</strong> - evidente</li>
+                                <li><strong>export</strong> - exportar</li>
+                                <li><strong>factor</strong> - factor</li>
+                                <li><strong>function</strong> - funci\u00f3n</li>
+                                <li><strong>formula</strong> - f\u00f3rmula</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-light); margin-bottom: 1rem;">G - L</h4>
+                            <ul style="color: var(--text-secondary); line-height: 2;">
+                                <li><strong>identify</strong> - identificar</li>
+                                <li><strong>indicate</strong> - indicar</li>
+                                <li><strong>individual</strong> - individual</li>
+                                <li><strong>interpret</strong> - interpretar</li>
+                                <li><strong>involve</strong> - involucrar</li>
+                                <li><strong>issue</strong> - asunto, tema</li>
+                                <li><strong>labor</strong> - trabajo, labor</li>
+                                <li><strong>legal</strong> - legal</li>
+                                <li><strong>legislate</strong> - legislar</li>
+                                <li><strong>major</strong> - principal</li>
+                                <li><strong>method</strong> - m\u00e9todo</li>
+                                <li><strong>occur</strong> - ocurrir</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: var(--primary-light); margin-bottom: 1rem;">P - S</h4>
+                            <ul style="color: var(--text-secondary); line-height: 2;">
+                                <li><strong>percent</strong> - porcentaje</li>
+                                <li><strong>period</strong> - per\u00edodo</li>
+                                <li><strong>policy</strong> - pol\u00edtica</li>
+                                <li><strong>principle</strong> - principio</li>
+                                <li><strong>procedure</strong> - procedimiento</li>
+                                <li><strong>process</strong> - proceso</li>
+                                <li><strong>require</strong> - requerir</li>
+                                <li><strong>research</strong> - investigaci\u00f3n</li>
+                                <li><strong>respond</strong> - responder</li>
+                                <li><strong>role</strong> - rol</li>
+                                <li><strong>significant</strong> - significativo</li>
+                                <li><strong>similar</strong> - similar</li>
+                                <li><strong>source</strong> - fuente</li>
+                                <li><strong>specific</strong> - espec\u00edfico</li>
+                                <li><strong>structure</strong> - estructura</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="list-connectors" class="tab-content">
+                <div class="content-box">
+                    <h3>Conectores y Transiciones</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Usa estos conectores para mejorar la fluidez y coherencia de tu writing y speaking.
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <div class="template-box">
+                            <h4>Para Agregar Ideas</h4>
+                            <p>
+                                <strong>furthermore</strong> - adem\u00e1s<br>
+                                <strong>moreover</strong> - es m\u00e1s<br>
+                                <strong>in addition</strong> - adem\u00e1s<br>
+                                <strong>additionally</strong> - adicionalmente<br>
+                                <strong>also</strong> - tambi\u00e9n<br>
+                                <strong>likewise</strong> - igualmente<br>
+                                <strong>similarly</strong> - de manera similar
+                            </p>
+                        </div>
+                        <div class="template-box">
+                            <h4>Para Contrastar</h4>
+                            <p>
+                                <strong>however</strong> - sin embargo<br>
+                                <strong>nevertheless</strong> - no obstante<br>
+                                <strong>on the other hand</strong> - por otro lado<br>
+                                <strong>in contrast</strong> - en contraste<br>
+                                <strong>conversely</strong> - a la inversa<br>
+                                <strong>whereas</strong> - mientras que<br>
+                                <strong>although</strong> - aunque
+                            </p>
+                        </div>
+                        <div class="template-box">
+                            <h4>Para Causa y Efecto</h4>
+                            <p>
+                                <strong>therefore</strong> - por lo tanto<br>
+                                <strong>consequently</strong> - en consecuencia<br>
+                                <strong>as a result</strong> - como resultado<br>
+                                <strong>thus</strong> - as\u00ed<br>
+                                <strong>hence</strong> - de ah\u00ed<br>
+                                <strong>because of this</strong> - debido a esto<br>
+                                <strong>for this reason</strong> - por esta raz\u00f3n
+                            </p>
+                        </div>
+                        <div class="template-box">
+                            <h4>Para Ejemplificar</h4>
+                            <p>
+                                <strong>for example</strong> - por ejemplo<br>
+                                <strong>for instance</strong> - por ejemplo<br>
+                                <strong>such as</strong> - tal como<br>
+                                <strong>specifically</strong> - espec\u00edficamente<br>
+                                <strong>to illustrate</strong> - para ilustrar<br>
+                                <strong>namely</strong> - a saber<br>
+                                <strong>in particular</strong> - en particular
+                            </p>
+                        </div>
+                        <div class="template-box">
+                            <h4>Para Secuenciar</h4>
+                            <p>
+                                <strong>first, second, third</strong> - primero...<br>
+                                <strong>initially</strong> - inicialmente<br>
+                                <strong>subsequently</strong> - posteriormente<br>
+                                <strong>finally</strong> - finalmente<br>
+                                <strong>lastly</strong> - por \u00faltimo<br>
+                                <strong>meanwhile</strong> - mientras tanto<br>
+                                <strong>afterward</strong> - despu\u00e9s
+                            </p>
+                        </div>
+                        <div class="template-box">
+                            <h4>Para Concluir</h4>
+                            <p>
+                                <strong>in conclusion</strong> - en conclusi\u00f3n<br>
+                                <strong>to summarize</strong> - para resumir<br>
+                                <strong>overall</strong> - en general<br>
+                                <strong>ultimately</strong> - en \u00faltima instancia<br>
+                                <strong>in short</strong> - en resumen<br>
+                                <strong>to sum up</strong> - para resumir<br>
+                                <strong>all in all</strong> - en definitiva
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="list-academic" class="tab-content">
+                <div class="content-box">
+                    <h3>Verbos Acad\u00e9micos de Alto Valor</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Estos verbos son especialmente \u00fatiles para la secci\u00f3n de Writing y para parafrasear.
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                        <div class="template-box">
+                            <h4>Para Reportar/Citar</h4>
+                            <p>
+                                <strong>state</strong> - declarar, afirmar<br>
+                                <strong>claim</strong> - afirmar, sostener<br>
+                                <strong>argue</strong> - argumentar<br>
+                                <strong>assert</strong> - aseverar<br>
+                                <strong>contend</strong> - sostener<br>
+                                <strong>maintain</strong> - mantener<br>
+                                <strong>suggest</strong> - sugerir<br>
+                                <strong>propose</strong> - proponer<br>
+                                <strong>note</strong> - se\u00f1alar<br>
+                                <strong>emphasize</strong> - enfatizar<br>
+                                <strong>highlight</strong> - destacar<br>
+                                <strong>point out</strong> - se\u00f1alar
+                            </p>
+                        </div>
+                        <div class="template-box">
+                            <h4>Para Analizar</h4>
+                            <p>
+                                <strong>examine</strong> - examinar<br>
+                                <strong>investigate</strong> - investigar<br>
+                                <strong>explore</strong> - explorar<br>
+                                <strong>assess</strong> - evaluar<br>
+                                <strong>evaluate</strong> - evaluar<br>
+                                <strong>consider</strong> - considerar<br>
+                                <strong>review</strong> - revisar<br>
+                                <strong>analyze</strong> - analizar<br>
+                                <strong>scrutinize</strong> - escrutar<br>
+                                <strong>study</strong> - estudiar
+                            </p>
+                        </div>
+                        <div class="template-box">
+                            <h4>Para Contrastar</h4>
+                            <p>
+                                <strong>challenge</strong> - desafiar<br>
+                                <strong>contradict</strong> - contradecir<br>
+                                <strong>refute</strong> - refutar<br>
+                                <strong>dispute</strong> - disputar<br>
+                                <strong>counter</strong> - contrarrestar<br>
+                                <strong>oppose</strong> - oponerse<br>
+                                <strong>question</strong> - cuestionar<br>
+                                <strong>cast doubt on</strong> - poner en duda<br>
+                                <strong>undermine</strong> - socavar<br>
+                                <strong>weaken</strong> - debilitar
+                            </p>
+                        </div>
+                        <div class="template-box">
+                            <h4>Para Explicar</h4>
+                            <p>
+                                <strong>demonstrate</strong> - demostrar<br>
+                                <strong>illustrate</strong> - ilustrar<br>
+                                <strong>clarify</strong> - clarificar<br>
+                                <strong>explain</strong> - explicar<br>
+                                <strong>describe</strong> - describir<br>
+                                <strong>outline</strong> - delinear<br>
+                                <strong>define</strong> - definir<br>
+                                <strong>elaborate</strong> - elaborar<br>
+                                <strong>specify</strong> - especificar<br>
+                                <strong>detail</strong> - detallar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Ejercicio de Vocabulario en Contexto</h2>
+
+            <div class="exercise-container">
+                <div class="exercise-header">
+                    <span class="exercise-title">Completa las oraciones</span>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-number">Pregunta 1</div>
+                    <div class="question-text">The researcher will _______ the data to find patterns in consumer behavior.</div>
+                    <div class="options">
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="vocab1" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">analyze</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab1" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">announce</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab1" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">abandon</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab1" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">achieve</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-number">Pregunta 2</div>
+                    <div class="question-text">The professor's _______ was that increasing temperatures would lead to more extreme weather events.</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab2" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">evidence</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="vocab2" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">hypothesis</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab2" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">conclusion</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab2" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">result</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-number">Pregunta 3</div>
+                    <div class="question-text">The study found a _______ correlation between exercise and mental health improvements.</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab3" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">minor</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab3" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">minimal</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="vocab3" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">significant</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab3" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">slight</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-number">Pregunta 4</div>
+                    <div class="question-text">The reading claims that deforestation harms biodiversity. _______, the professor argues that some ecosystems can recover.</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab4" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">Furthermore</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab4" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">Similarly</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="vocab4" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">However</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab4" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">Therefore</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-block">
+                    <div class="question-number">Pregunta 5</div>
+                    <div class="question-text">The lecturer _______ that the traditional theory has several flaws that need to be addressed.</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab5" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">agrees</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="vocab5" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">contends</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab5" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">ignores</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="vocab5" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">accepts</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="exercise-actions">
+                    <button class="btn btn-primary" onclick="checkVocabAnswers()">Verificar Respuestas</button>
+                    <button class="btn btn-secondary" onclick="resetVocabExercise()">Reiniciar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">T</span>
+                    <span>TOEFL Master</span>
+                </div>
+                <p>Plataforma gratuita de preparaci\u00f3n para el TOEFL iBT</p>
+            </div>
+            <div class="footer-bottom">
+                <p>\u00a9 2024 TOEFL Master. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

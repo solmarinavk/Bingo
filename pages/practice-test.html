@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Test - TOEFL Master</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <span class="logo-icon">T</span>
+                <span>TOEFL Master</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="reading.html">Reading</a></li>
+                <li><a href="listening.html">Listening</a></li>
+                <li><a href="speaking.html">Speaking</a></li>
+                <li><a href="writing.html">Writing</a></li>
+                <li><a href="vocabulary.html">Vocabulario</a></li>
+                <li><a href="practice-test.html" class="btn-nav active">Test Completo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <span class="badge">Simulacro Completo</span>
+        <h1>TOEFL Practice Test</h1>
+        <p>Pon a prueba tus habilidades con un examen completo en condiciones similares al real</p>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-box" style="max-width: 800px; margin: 0 auto;">
+                <h3>Informaci\u00f3n del Test</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    Este test simula las condiciones del examen TOEFL iBT real. Aseg\u00farate de tener tiempo suficiente y un ambiente tranquilo.
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                    <div class="result-item">
+                        <div class="result-item-value" style="color: var(--reading-color);">35 min</div>
+                        <div class="result-item-label">Reading</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-value" style="color: var(--listening-color);">36 min</div>
+                        <div class="result-item-label">Listening</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-value" style="color: var(--speaking-color);">16 min</div>
+                        <div class="result-item-label">Speaking</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-item-value" style="color: var(--writing-color);">29 min</div>
+                        <div class="result-item-label">Writing</div>
+                    </div>
+                </div>
+
+                <div style="background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--radius); margin-bottom: 2rem;">
+                    <h4 style="margin-bottom: 1rem;">Antes de comenzar:</h4>
+                    <ul style="color: var(--text-secondary); line-height: 2;">
+                        <li>Aseg\u00farate de tener aproximadamente 2 horas disponibles</li>
+                        <li>Usa auriculares para las secciones de Listening</li>
+                        <li>Ten papel y l\u00e1piz para tomar notas</li>
+                        <li>Busca un lugar tranquilo sin distracciones</li>
+                        <li>No uses diccionarios ni ayudas externas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Selecciona una Secci\u00f3n para Practicar</h2>
+            <p class="section-subtitle">Puedes practicar cada secci\u00f3n individualmente o hacer el test completo</p>
+
+            <div class="cards-grid">
+                <a href="reading.html" class="card card-reading">
+                    <div class="card-icon">📖</div>
+                    <h3>Reading Section</h3>
+                    <p>2 pasajes con 10 preguntas cada uno. Practica comprensi\u00f3n de textos acad\u00e9micos.</p>
+                    <div class="card-details">
+                        <span>35 minutos</span>
+                        <span>20 preguntas</span>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+
+                <a href="listening.html" class="card card-listening">
+                    <div class="card-icon">🎧</div>
+                    <h3>Listening Section</h3>
+                    <p>Conferencias y conversaciones con preguntas de comprensi\u00f3n auditiva.</p>
+                    <div class="card-details">
+                        <span>36 minutos</span>
+                        <span>28 preguntas</span>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+
+                <a href="speaking.html" class="card card-speaking">
+                    <div class="card-icon">🎤</div>
+                    <h3>Speaking Section</h3>
+                    <p>4 tareas de expresi\u00f3n oral con tiempo limitado para preparar y responder.</p>
+                    <div class="card-details">
+                        <span>16 minutos</span>
+                        <span>4 tareas</span>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+
+                <a href="writing.html" class="card card-writing">
+                    <div class="card-icon">✍️</div>
+                    <h3>Writing Section</h3>
+                    <p>Ensayo integrado y discusi\u00f3n acad\u00e9mica con tiempo controlado.</p>
+                    <div class="card-details">
+                        <span>29 minutos</span>
+                        <span>2 tareas</span>
+                    </div>
+                    <div class="card-arrow">→</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Mini Test R\u00e1pido</h2>
+            <p class="section-subtitle">Un test de 10 preguntas para evaluar tu nivel actual</p>
+
+            <div class="exercise-container" style="max-width: 900px; margin: 0 auto;">
+                <div class="exercise-header">
+                    <span class="exercise-title">Diagnostic Test</span>
+                    <div class="exercise-timer">
+                        <span>Tiempo:</span>
+                        <span id="mini-test-timer">15:00</span>
+                    </div>
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Progreso</span>
+                        <span id="test-progress">0 / 10</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="test-progress-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Question 1: Reading -->
+                <div class="question-block" id="mini-q1">
+                    <div class="question-number">Pregunta 1 - Reading Vocabulary</div>
+                    <div class="question-text">In the sentence "The scientist's findings were corroborated by subsequent studies," the word "corroborated" is closest in meaning to:</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q1" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">questioned</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="mini-q1" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">confirmed</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q1" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">expanded</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q1" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">published</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2: Reading -->
+                <div class="question-block" id="mini-q2">
+                    <div class="question-number">Pregunta 2 - Reading Inference</div>
+                    <div class="question-text">Read: "Unlike their predecessors, modern smartphones rely heavily on touchscreen interfaces." What can be inferred?</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q2" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">Touchscreens are a new invention</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="mini-q2" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">Earlier phones used different input methods</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q2" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">Touchscreens are more reliable</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q2" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">Modern smartphones are better in every way</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3: Listening -->
+                <div class="question-block" id="mini-q3">
+                    <div class="question-number">Pregunta 3 - Listening Comprehension</div>
+                    <div class="question-text">A professor says: "While this theory was widely accepted for decades, recent evidence has cast doubt on its validity." What is the professor suggesting?</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q3" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">The theory is completely correct</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q3" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">The theory was never accepted</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="mini-q3" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">New findings suggest the theory may be wrong</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q3" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">The evidence supports the theory</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4: Listening -->
+                <div class="question-block" id="mini-q4">
+                    <div class="question-number">Pregunta 4 - Listening Function</div>
+                    <div class="question-text">A student says to a professor: "I was wondering if there's any way I could get an extension on the paper?" Why does the student say "I was wondering"?</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q4" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">To express confusion</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="mini-q4" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">To make a polite request</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q4" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">To show excitement</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q4" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">To disagree with the professor</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5: Grammar -->
+                <div class="question-block" id="mini-q5">
+                    <div class="question-number">Pregunta 5 - Grammar</div>
+                    <div class="question-text">Choose the grammatically correct sentence:</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q5" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">Neither the students nor the teacher were prepared for the exam.</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="mini-q5" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">Neither the students nor the teacher was prepared for the exam.</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q5" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">Neither the students or the teacher was prepared for the exam.</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q5" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">Neither the students nor the teacher been prepared for the exam.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 6: Vocabulary -->
+                <div class="question-block" id="mini-q6">
+                    <div class="question-number">Pregunta 6 - Vocabulary in Context</div>
+                    <div class="question-text">"The government's _______ economic policies led to rapid industrial growth." Choose the best word:</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q6" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">progressive</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="mini-q6" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">aggressive</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q6" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">regressive</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q6" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">passive</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 7: Reading Reference -->
+                <div class="question-block" id="mini-q7">
+                    <div class="question-number">Pregunta 7 - Reading Reference</div>
+                    <div class="question-text">"Researchers studied dolphins and found that they communicate through a complex system of clicks and whistles. These allow them to coordinate hunting activities." The word "These" refers to:</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q7" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">researchers</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q7" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">dolphins</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="mini-q7" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">clicks and whistles</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q7" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">hunting activities</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 8: Listening Detail -->
+                <div class="question-block" id="mini-q8">
+                    <div class="question-number">Pregunta 8 - Transition Words</div>
+                    <div class="question-text">Choose the best transition: "The experiment yielded positive results. _______, more research is needed before drawing final conclusions."</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q8" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">Therefore</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q8" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">Furthermore</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="mini-q8" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">Nevertheless</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q8" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">Similarly</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 9: Paraphrase -->
+                <div class="question-block" id="mini-q9">
+                    <div class="question-number">Pregunta 9 - Sentence Paraphrase</div>
+                    <div class="question-text">Which sentence best paraphrases: "The proliferation of social media has fundamentally altered interpersonal communication"?</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q9" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">Social media has not changed communication</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="mini-q9" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">The spread of social media has deeply changed how people communicate</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q9" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">Social media is bad for communication</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q9" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">Interpersonal communication created social media</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 10: Purpose -->
+                <div class="question-block" id="mini-q10">
+                    <div class="question-number">Pregunta 10 - Author's Purpose</div>
+                    <div class="question-text">An article states: "While many celebrate the convenience of online shopping, we must consider its impact on local businesses and community interactions." The author's purpose is to:</div>
+                    <div class="options">
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q10" value="A">
+                            <span class="option-letter">A</span>
+                            <span class="option-text">Promote online shopping</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q10" value="B">
+                            <span class="option-letter">B</span>
+                            <span class="option-text">Criticize local businesses</span>
+                        </label>
+                        <label class="option" data-correct="true">
+                            <input type="radio" name="mini-q10" value="C">
+                            <span class="option-letter">C</span>
+                            <span class="option-text">Encourage readers to consider both sides of an issue</span>
+                        </label>
+                        <label class="option" data-correct="false">
+                            <input type="radio" name="mini-q10" value="D">
+                            <span class="option-letter">D</span>
+                            <span class="option-text">Explain how online shopping works</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="exercise-actions">
+                    <button class="btn btn-primary btn-large" onclick="submitMiniTest()">Enviar Test</button>
+                    <button class="btn btn-secondary" onclick="resetMiniTest()">Reiniciar</button>
+                </div>
+
+                <div id="mini-test-results" class="results-card hidden mt-4">
+                    <div class="results-score" id="mini-test-score">0/10</div>
+                    <div class="results-label">Tu Puntaje</div>
+
+                    <div class="results-breakdown">
+                        <div class="result-item">
+                            <div class="result-item-value" id="result-correct">0</div>
+                            <div class="result-item-label">Correctas</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-value" id="result-incorrect">0</div>
+                            <div class="result-item-label">Incorrectas</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-item-value" id="result-level">-</div>
+                            <div class="result-item-label">Nivel</div>
+                        </div>
+                    </div>
+
+                    <div id="level-feedback" style="margin-top: 1.5rem; padding: 1rem; background: var(--bg-tertiary); border-radius: var(--radius); text-align: left;">
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="reading.html" class="btn btn-primary">Continuar Practicando</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Consejos para el D\u00eda del Examen</h2>
+
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-number">01</div>
+                    <h4>Llega Temprano</h4>
+                    <p>Llega al centro de examen al menos 30 minutos antes. Necesitar\u00e1s tiempo para el registro y verificaci\u00f3n de identidad.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">02</div>
+                    <h4>Descansa Bien</h4>
+                    <p>Duerme bien la noche anterior. Un cerebro descansado rinde mucho mejor que uno agotado por estudiar hasta tarde.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">03</div>
+                    <h4>Desayuna Bien</h4>
+                    <p>Come un desayuno nutritivo pero no pesado. Evita demasiada cafe\u00edna que puede ponerte nervioso.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">04</div>
+                    <h4>Lleva tu ID</h4>
+                    <p>Necesitas un documento de identidad v\u00e1lido con foto. Verifica los requisitos espec\u00edficos de tu centro de examen.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">05</div>
+                    <h4>Mant\u00e9n la Calma</h4>
+                    <p>Si te atascas en una pregunta, sigue adelante. Puedes volver a ella despu\u00e9s (excepto en Listening).</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">06</div>
+                    <h4>Usa Todo el Tiempo</h4>
+                    <p>Si terminas temprano, usa el tiempo extra para revisar tus respuestas. No salgas antes de tiempo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">T</span>
+                    <span>TOEFL Master</span>
+                </div>
+                <p>Plataforma gratuita de preparaci\u00f3n para el TOEFL iBT</p>
+            </div>
+            <div class="footer-bottom">
+                <p>\u00a9 2024 TOEFL Master. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
